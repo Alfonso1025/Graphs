@@ -918,14 +918,36 @@ int sourceNode = 0;
 weightedGraph.printDijkstra(shortestDistances, sourceNode); // Prints the minimum distances
 
 ```
-
+**Example Usage:**
 ---
-
-## **Example Usage**
-```cpp
 cppCopy code
-int* shortestDistances; // Assume shortestDistances array is properly initialized
-int sourceNode = 0;
-weightedGraph.printDijkstra(shortestDistances, sourceNode); // Prints the minimum distances
+#include <iostream>int main() {
+    Weighted weightedGraph(4);
+
+    // Create matrix with weights
+    weightedGraph.createMatrix();
+
+    // Convert adjacency list to matrix
+    LinkedList** adjListArray; // Assume adjListArray is properly initialized
+    weightedGraph.adjListToMatrix(adjListArray);
+
+    // Perform Dijkstra's algorithm
+    int sourceNode = 0;
+    int* shortestDistances = weightedGraph.dijkstra(sourceNode);
+
+    // Print the minimum distances
+    weightedGraph.printDijkstra(shortestDistances, sourceNode);
+
+    // Perform efficient Dijkstra's algorithm
+    int* efficientDistances = weightedGraph.dijkstraEfficient(adjListArray, sourceNode);
+
+    // Print the efficient minimum distances
+    weightedGraph.printDijkstra(efficientDistances, sourceNode);
+
+    return 0;
+}
+
+
+
 
 ```
