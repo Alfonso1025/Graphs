@@ -922,3 +922,10 @@ weightedGraph.printDijkstra(shortestDistances, sourceNode); // Prints the minimu
 ---
 
 ## **Example Usage**
+```cpp
+cppCopy code
+int* shortestDistances; // Assume shortestDistances array is properly initialized
+int sourceNode = 0;
+weightedGraph.printDijkstra(shortestDistances, sourceNode); // Prints the minimum distances
+
+```
